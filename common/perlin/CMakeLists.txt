@@ -1,0 +1,36 @@
+# Copyright (C) 2024 Aleksa Radomirovic
+#
+# This program is free software: you can redistribute it and/or modify it
+# under the terms of the GNU General Public License as published by the Free
+# Software Foundation, version 3.
+#
+# This program is distributed in the hope that it will be useful, but WITHOUT
+# ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or
+# FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License for
+# more details.
+#
+# You should have received a copy of the GNU General Public License along with
+# this program. If not, see <https://www.gnu.org/licenses/>.
+
+add_library(
+    perlin OBJECT
+
+    source/perlin.c
+)
+target_include_directories(
+    perlin PUBLIC include
+)
+target_link_libraries(
+    perlin PRIVATE
+    m
+    gomp
+)
+target_compile_options(
+    perlin PRIVATE
+#   -Ofast
+    -fopenmp -fopenmp-simd
+#   -msse -msse2 -mssse3 -msse4.1 -msse4.2
+#   -mavx -mavx2
+#   -mavx512f -mavx512cd -mavx512vl
+#   -mavx512bw -mavx512dq -mavx512ifma -mavx512vbmi
+)
