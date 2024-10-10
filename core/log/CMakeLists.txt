@@ -12,13 +12,11 @@
 # You should have received a copy of the GNU General Public License along with
 # this program. If not, see <https://www.gnu.org/licenses/>.
 
-add_subdirectory(log)
-link_libraries(
-    log
+add_library(
+    log STATIC
+
+    source/log.c
 )
-
-add_executable(
-    histgen
-
-    source/histgen.c
+target_include_directories(
+    log PUBLIC include
 )
