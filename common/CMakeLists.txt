@@ -13,4 +13,3 @@
 # this program. If not, see <https://www.gnu.org/licenses/>.
 
 add_subdirectory(perlin)
-add_subdirectory(tga)

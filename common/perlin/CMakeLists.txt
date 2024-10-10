@@ -13,7 +13,7 @@
 # this program. If not, see <https://www.gnu.org/licenses/>.
 
 add_library(
-    perlin OBJECT
+    perlin STATIC
 
     source/perlin.c
 )

@@ -17,13 +17,3 @@ add_executable(
 
     source/histgen.c
 )
-target_link_libraries(
-    histgen PRIVATE
-    perlin
-    tga
-    gomp
-)
-target_compile_options(
-    histgen PRIVATE
-    -fopenmp -fopenmp-simd
-)

@@ -15,12 +15,14 @@
  */
 #pragma once
 
+#include <stddef.h>
+
 typedef struct {
     float x, y;
 } perlin_vec2_t;
 
-int generate_perlin_field(perlin_vec2_t * field, unsigned int width, unsigned int height);
+int generate_perlin_field(perlin_vec2_t * field, size_t width, size_t height);
 
-float get_perlin_value(float x, float y, perlin_vec2_t * field, unsigned int width, unsigned int height);
+float get_perlin_value(float x, float y, perlin_vec2_t * field, size_t width, size_t height);
 
-float get_perlin_value_fractal(float x, float y, float scale, unsigned int depth, perlin_vec2_t * field, unsigned int width, unsigned int height);
+float get_perlin_value_fractal(float x, float y, float scale, unsigned int depth, perlin_vec2_t * field, size_t width, size_t height);
